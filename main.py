@@ -11,9 +11,12 @@ def main():
     hotel_id = int(input("Input hotel id: "))
     hotel = Hotel(hotel_id)
 
+
     if hotel.available:
+        customer_name = input("Enter your name: ")
         hotel.book()
-    hotel.book()
+        ticket = ReservationTicket(customer_name, hotel)
+        print(ticket.generate())
 
 
 main()

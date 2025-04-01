@@ -33,11 +33,17 @@ class Hotel:
 
 class ReservationTicket:
     def __init__(self, customer_name, hotel_object):
-        self.name = customer_name
+        self.customer_name = customer_name
         self.hotel = hotel_object
 
     def generate(self):
-        pass
+        content = f"""
+Thank you for your reservation!
+Here is your booking data:
+Name: {self.customer_name}
+Hotel Name: {self.hotel.hotel_name}
+"""
+        return content
 
 
 class NoAvailabilityException(Exception):
