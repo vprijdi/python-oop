@@ -2,7 +2,7 @@ import pandas as pd
 
 
 class Hotel:
-    hotels_df = pd.read_csv("hotels.csv")
+    hotels_df = pd.read_csv("../data/hotels.csv")
 
     def __init__(self, hotel_id):
         row = Hotel.hotels_df[Hotel.hotels_df["id"] == hotel_id]
