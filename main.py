@@ -13,11 +13,12 @@ def main():
     hotel = Hotel(hotel_id)
 
     if hotel.available:
-        customer_name = input("Enter your name: ")
-        credit_card = CreditCard("1234567890123456", )
-        hotel.book()
-        ticket = ReservationTicket(customer_name, hotel)
-        print(ticket.generate())
+        credit_card = CreditCard("1234")
+        if credit_card.validate(expiration='12/26', holder='JOHN SMITH', cvc='123'):
+            customer_name = input("Enter your name: ")
+            hotel.book()
+            ticket = ReservationTicket(customer_name, hotel)
+            print(ticket.generate())
 
 
 main()
