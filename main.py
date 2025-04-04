@@ -1,6 +1,6 @@
 import pandas as pd
-from classes.Hotel import Hotel, ReservationTicket
-from classes.CreditCard import CreditCard
+from classes.hotel_booking import Hotel, ReservationTicket
+from classes.credit_card import CreditCard
 
 
 def main():

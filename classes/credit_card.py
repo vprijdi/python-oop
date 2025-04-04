@@ -1,5 +1,7 @@
 import pandas as pd
 
+# TODO: add documentation
+
 
 class CreditCard:
     cards_df = pd.read_csv("data/cards.csv", dtype=str)
@@ -18,4 +20,3 @@ class CreditCard:
             and card_data["cvc"].values[0] == cvc
             and card_data["holder"].values[0] == holder
         )
-
