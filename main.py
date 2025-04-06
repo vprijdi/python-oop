@@ -1,6 +1,6 @@
 import pandas as pd
 from classes.hotel_booking import Hotel, ReservationTicket
-from classes.credit_card import CreditCard
+from classes.credit_card import SecureCreditCard
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
     hotel = Hotel(hotel_id)
 
     if hotel.available:
-        credit_card = CreditCard("1234")
+        credit_card = SecureCreditCard("1234567890123456")
         if credit_card.validate(expiration='12/26', holder='JOHN SMITH', cvc='123'):
             customer_name = input("Enter your name: ")
             hotel.book()

@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 # TODO: add documentation
 
 
@@ -16,7 +17,17 @@ class CreditCard:
             return False
 
         return (
-            card_data["expiration"].values[0] == expiration
-            and card_data["cvc"].values[0] == cvc
-            and card_data["holder"].values[0] == holder
+                card_data["expiration"].values[0] == expiration
+                and card_data["cvc"].values[0] == cvc
+                and card_data["holder"].values[0] == holder
         )
+
+
+class SecureCreditCard(CreditCard):
+    secure_df = pd.read_csv("data/card_security.csv", dtype=str)
+
+    def authenticate(self, given_password):
+        password = SecureCreditCard.secure_df[
+            SecureCreditCard.secure_df["number"] == self.number, "password"
+        ].values[0]
+        return password == given_password
