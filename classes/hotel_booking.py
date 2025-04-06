@@ -97,6 +97,30 @@ Name: {self.customer_name}
 Hotel Name: {self.hotel.hotel_name}
 """
 
+    @property
+    def customer_name(self):
+        """Get the customer's name.
+
+        :return: (str) The customer's name
+        """
+        return self._name.strip().title()
+
+    @customer_name.setter
+    def customer_name(self, value):
+        """Set the customer's name.
+
+        :param value: (str) The new customer's name.
+        :raises ValueError: If the value is not a string.
+        """
+        if not isinstance(value, str):
+            raise ValueError("Customer name must be a string.")
+        self._name = value
+
+    @customer_name.deleter
+    def customer_name(self):
+        """Delete the customer's name."""
+        del self._name
+
 
 class NoAvailabilityException(Exception):
     """Exception raised when attempting to book a hotel that has no availability."""
